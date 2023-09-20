@@ -24,8 +24,7 @@ function retrieveUsername(username){
         },
         ExpressionAttributeValues: {
             ':username': username
-        },
-        
+        },  
     };
     return docClient.scan(params).promise();
 }
@@ -64,22 +63,8 @@ function retrieveUserLogin(username, password){
         ExpressionAttributeValues: {
             ':username': username,
             ':password': password
-        },
-        
+        },    
     };
     return docClient.scan(params).promise();
 }
-
-//Submit a ticket
-/** A ticket should be a JSON that includes ticket id, author, description, type, and amount
- * the ticket id should auto increment and have a default status of Pending 
- * (which the manager will change to Approved/Denied)
- * Function: check JSON for valid ticket, add ticket to DB
- * Return: ?? */
-
-
-
-//User views their own previous tickets
-/**A user should be able to see their request submission history including tickets that 
- * are still pending and tickets that have been processed*/
 

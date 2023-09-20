@@ -1,11 +1,14 @@
-const userDAO = require('./repository/userDAO');
 const express = require('express');
 const server = express();
 const PORT = 3000;
+const ticketRouter = require('./routes/tickets');
+
 const uuid = require('uuid');
 const bodyParser = require('body-parser');
+const userDAO = require('./repository/userDAO');
 
 server.use(bodyParser.json());
+server.use('/tickets', ticketRouter);
 
 //validate user req body
 function validateNewUser(req, res, next){
@@ -17,27 +20,6 @@ function validateNewUser(req, res, next){
         next();
     }
 }
-
-//Check username availability
-/** 
-function checkUsernameAvailability(req, res, next){
-    userDAO.retrieveUnavailableUsernames()
-        .then((data) => {
-            const unavailableUsernames = data.Items;
-            for(unavailable of unavailableUsernames){
-                if(unavailable.username == req.body.username){
-                    req.body.userExists = true;
-                    next();
-                }
-            }
-            req.body.userExists = false;
-            next();
-        })
-        .catch((err) => {
-            console.error(err);
-        });
-}
-*/
 
 //Check username exists
 function checkUsernameExists(req, res, next){
@@ -56,11 +38,10 @@ function checkUsernameExists(req, res, next){
         });
 }
 
-
 //REGISTER NEW USER
 server.post('/register', validateNewUser, checkUsernameExists, (req, res) => {
     const body = req.body;
-    if(req.body.valid && !req.body.userExists){
+    if(body.valid && !body.userExists){
         userDAO.registerNewUser(uuid.v4(), body.username, body.password, false)
             .then((data) => {
                 res.send({
@@ -73,7 +54,7 @@ server.post('/register', validateNewUser, checkUsernameExists, (req, res) => {
                 })
             })
         } else {
-            if(req.body.userExists){
+            if(body.userExists){
                 res.send({
                     message: "Username already taken"
                 })        
@@ -107,6 +88,7 @@ server.post('/login', (req, res) => {
         })
 })
 
+//Start server
 server.listen(PORT, () => {
     console.log(`Server is listening on PORT ${PORT}`);
 });
