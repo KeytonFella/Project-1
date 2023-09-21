@@ -34,14 +34,14 @@ function retrieveUsername(username){
  * as long as the username & password are not blank and the user does not already exist 
  * Function: check JSON for valid username & password, check DB for existing user, add user to DB if requirements are met
  * Return: ?? */
-function registerNewUser(user_id, username, password, admin){
+function registerNewUser(user_id, username, password, role){
     const params = {
         TableName: "users",
         Item: {
             user_id,
             username,
             password,
-            admin
+            role
         }
     };
     return docClient.put(params).promise();

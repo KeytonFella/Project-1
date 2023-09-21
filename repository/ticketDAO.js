@@ -36,8 +36,6 @@ function submitNewTicket(ticket_id, author, description, type, amount, status){
     return docClient.put(params).promise();
 }
 
-
-
 //User views their own previous tickets
 /**A user should be able to see their request submission history including tickets that 
  * are still pending and tickets that have been processed*/

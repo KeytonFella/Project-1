@@ -2,7 +2,7 @@ const express = require('express');
 const server = express();
 const PORT = 3000;
 const ticketRouter = require('./routes/tickets');
-
+const jwtUtil = require('./utility/jwt_util');
 const uuid = require('uuid');
 const bodyParser = require('body-parser');
 const userDAO = require('./repository/userDAO');
@@ -42,7 +42,7 @@ function checkUsernameExists(req, res, next){
 server.post('/register', validateNewUser, checkUsernameExists, (req, res) => {
     const body = req.body;
     if(body.valid && !body.userExists){
-        userDAO.registerNewUser(uuid.v4(), body.username, body.password, false)
+        userDAO.registerNewUser(uuid.v4(), body.username, body.password, "employee")
             .then((data) => {
                 res.send({
                     message: "User registered successfully"
@@ -72,8 +72,11 @@ server.post('/login', (req, res) => {
     userDAO.retrieveUserLogin(body.username, body.password)
         .then((data) => {
             if(data.Count == 1){
+                const userItem = data.Items[0];
+                const token = jwtUtil.createJWT(userItem.username, userItem.role);
                 res.send({
-                    message: "User login successful"
+                    message: "User login successful",
+                    token: token
                 })
             } else {
                 res.send({
@@ -82,6 +85,7 @@ server.post('/login', (req, res) => {
             }
         })
         .catch((err) => {
+            console.error(err);
             res.send({
                 message: "Login failed"
             })
