@@ -5,7 +5,7 @@ function createJWT(username, role){
     return jwt.sign({
         username,
         role
-    }, 'thisisnotasecret', {
+    }, 'thisisasecret', {
         expiresIn: '1d'
     })
 }

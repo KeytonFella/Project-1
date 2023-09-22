@@ -124,7 +124,7 @@ router.get('', verifyUser, (req, res, next) => {
     } else {
         res.statusCode = 401;
         res.send({
-            message: `You are not an admin, you are an ${req.body.role}`
+            message: `You must be an admin to view all ${status} tickets. You are an ${req.body.role}`
         })
     }
 })
@@ -147,7 +147,7 @@ router.put('/:ticket_id', verifyUser, (req, res) => {
     }else{
         res.statusCode = 401;
         res.send({
-            message: `You are not an admin, you are an ${req.body.role}`
+            message: `You must be an admin to update a ticket. You are an ${req.body.role}`
         })
     }
 })
