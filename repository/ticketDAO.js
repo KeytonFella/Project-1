@@ -12,7 +12,8 @@ module.exports = {
     submitNewTicket,
     retrieveSubmittedTickets,
     retrieveTicketsOfStatus,
-    updateTicketStatus
+    updateTicketStatus,
+    retrieveSubmittedTicketsByType
 }
 //Submit a ticket
 /** A ticket should be a JSON that includes ticket id, author, description, type, and amount
@@ -36,6 +37,7 @@ function submitNewTicket(ticket_id, author, description, type, amount, status){
     return docClient.put(params).promise();
 }
 
+
 //User views their own previous tickets
 /**A user should be able to see their request submission history including tickets that 
  * are still pending and tickets that have been processed*/
@@ -48,6 +50,23 @@ function retrieveSubmittedTickets(author){
         },
         ExpressionAttributeValues: {
             ':author': author
+        },  
+    };
+    return docClient.scan(params).promise();
+}
+
+//User views their own previous tickets filtered by type
+function retrieveSubmittedTicketsByType(author, type){
+    const params = {
+        TableName: 'tickets',
+        FilterExpression: '#a = :author AND #t = :type',
+        ExpressionAttributeNames: {
+            '#a': 'author',
+            '#t': 'type'
+        },
+        ExpressionAttributeValues: {
+            ':author': author,
+            ':type': type
         },  
     };
     return docClient.scan(params).promise();
@@ -69,20 +88,23 @@ function retrieveTicketsOfStatus(status){
 }
 
 //Manager updates ticket status
-function updateTicketStatus(ticket_id, status){
+function updateTicketStatus(ticket_id, status, resolver){
     const params = {
         TableName: 'tickets',
         Key: {
             ticket_id
         },
-        UpdateExpression: 'set #s = :status',
+        UpdateExpression: 'set #s = :status, #r = :resolver',
+        ConditionExpression: 'attribute_exists(ticket_id) AND #s = :pending',
         ExpressionAttributeNames:{
-            '#s': 'status'
+            '#s': 'status',
+            '#r': 'resolver'
         },
         ExpressionAttributeValues:{
-            ':status': status
-        },
-        ConditionExpression: 'attribute_exists(ticket_id)'
+            ':status': status,
+            ':resolver': resolver,
+            ':pending': "Pending"
+        }   
     }
 
     return docClient.update(params).promise();

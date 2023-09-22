@@ -11,7 +11,9 @@ const docClient = new AWS.DynamoDB.DocumentClient();
 module.exports = {
     registerNewUser,
     retrieveUserLogin,
-    retrieveUsername
+    retrieveUsername,
+    retrieveEmployeeList,
+    updateUserRole
 }
 
 //Retrieve username
@@ -34,14 +36,14 @@ function retrieveUsername(username){
  * as long as the username & password are not blank and the user does not already exist 
  * Function: check JSON for valid username & password, check DB for existing user, add user to DB if requirements are met
  * Return: ?? */
-function registerNewUser(user_id, username, password, role){
+function registerNewUser(user_id, username, password, user_role){
     const params = {
         TableName: "users",
         Item: {
             user_id,
             username,
             password,
-            role
+            user_role
         }
     };
     return docClient.put(params).promise();
@@ -68,3 +70,30 @@ function retrieveUserLogin(username, password){
     return docClient.scan(params).promise();
 }
 
+//Admin can view all employees (id and username only)
+function retrieveEmployeeList(){
+    const params = {
+        TableName: 'users',
+        ProjectionExpression: 'user_id, username, user_role'
+    };
+    return docClient.scan(params).promise();
+}
+
+function updateUserRole(user_id, user_role){
+    const params = {
+        TableName: 'users',
+        Key: {
+            user_id
+        },
+        UpdateExpression: 'set #r = :user_role',
+        ConditionExpression: 'attribute_exists(user_id)',
+        ExpressionAttributeNames:{
+            '#r': 'user_role'
+        },
+        ExpressionAttributeValues:{
+            ':user_role': user_role
+        }   
+    }
+
+    return docClient.update(params).promise();
+}

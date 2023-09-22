@@ -1,0 +1,34 @@
+2023-09-22T19:50:17.433Z [info]: User bulbasaur has been registered
+2023-09-22T19:59:29.183Z [info]: squirtle has submitted a new ticket for "Shell upgrades"
+2023-09-22T19:59:36.358Z [info]: admin viewed all Pending tickets
+2023-09-22T20:00:10.436Z [info]: admin has set ticket id: d6d36be6-e237-4be9-9d4f-c3dd45c069e2 to status: Approved
+2023-09-22T20:00:40.734Z [info]: admin has set ticket id: 656db69d-29aa-47b1-ae8a-50060a0b5661 to status: Denied
+2023-09-22T20:01:14.116Z [info]: squirtle has submitted a new ticket for "Shell upgrades"
+2023-09-22T20:01:17.207Z [info]: admin viewed all Pending tickets
+2023-09-22T20:01:27.086Z [info]: admin has Approved ticket id: 6c66350f-f975-4d26-85d2-01d00e38d886
+2023-09-22T20:01:37.876Z [info]: bulbasaur viewed all of their tickets
+2023-09-22T20:01:55.853Z [info]: bulbasaur viewed all of their tickets for Lodging
+2023-09-22T20:02:10.199Z [info]: User admin has viewed all accounts
+2023-09-22T20:21:18.276Z [info]: User admin has logged in
+2023-09-22T20:24:24.042Z [error]: An error occurred when admin tried to set the status of ticket id: 6c66350f-f975-4d26-85d2-01d00e38d886 to Approved 
+ConditionalCheckFailedException: The conditional request failed
+2023-09-22T20:24:41.925Z [error]: An error occurred when admin tried to set the status of ticket id: 656db69d-29aa-47b1-ae8a-50060a0b5661 to Denied 
+ConditionalCheckFailedException: The conditional request failed
+2023-09-22T20:43:33.442Z [info]: User piplup has been registered
+2023-09-22T20:43:51.209Z [info]: User admin has logged in
+2023-09-22T20:43:55.242Z [info]: User torchic has logged in
+2023-09-22T20:44:11.704Z [info]: squirtle has submitted a new ticket for "Shell upgrades"
+2023-09-22T20:44:16.494Z [info]: admin viewed all Pending tickets
+2023-09-22T20:44:29.030Z [info]: UNAUTHORIZED: employee: bulbasaur attempted to view all tickets
+2023-09-22T20:44:36.710Z [info]: UNAUTHORIZED: employee: torchic attempted to change a ticket's status
+2023-09-22T20:44:47.579Z [error]: An error occurred when admin tried to set the status of ticket id: 6c66350f-f975-4d26-85d2-01d00e38d886 to Approved 
+ConditionalCheckFailedException: The conditional request failed
+2023-09-22T20:44:56.389Z [info]: admin has Approved ticket id: 13632e35-cafc-465e-ad2c-f00d978f9bca
+2023-09-22T20:45:05.767Z [error]: An error occurred when admin tried to set the status of ticket id: 656db69d-29aa-47b1-ae8a-50060a0b5661 to Denied 
+ConditionalCheckFailedException: The conditional request failed
+2023-09-22T20:45:11.436Z [info]: bulbasaur viewed all of their tickets
+2023-09-22T20:45:16.137Z [info]: bulbasaur viewed all of their tickets for Lodging
+2023-09-22T20:45:22.002Z [info]: User admin has viewed all accounts
+2023-09-22T20:45:25.629Z [info]: UNAUTHORIZED: employee: torchic attempted to view all user accounts
+2023-09-22T20:45:31.657Z [info]: User admin has updated user_id: ea7fa87c-a55b-405a-9dd0-cfe8dccb534f role to admin
+2023-09-22T20:45:37.442Z [info]: UNAUTHORIZED: employee: torchic attempted to update user_id: d407b1f1-4bf0-4871-afcb-9bce4d52c741 role to admin

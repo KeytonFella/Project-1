@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const jwtUtil = require('../utility/jwt_util');
+const logger = require('../utility/logger');
 const ticketDAO = require('../repository/ticketDAO');
 const uuid = require('uuid');
 const bodyParser = require('body-parser');
@@ -32,7 +33,6 @@ function validateNewTicket(req, res, next){
 function verifyUser(req, res, next){
     if(req.headers.authorization){
         const token = req.headers.authorization.split(' ')[1];
-
         jwtUtil.verifyTokenAndReturnPayload(token)
             .then((payload) => {
                 req.body.username = payload.username;
@@ -40,7 +40,7 @@ function verifyUser(req, res, next){
                 next();
             })
             .catch((err) => {
-                console.error(err);
+                logger.error(`An error occurred when authenticating token: \n${err}`);
                 res.statusCode = 401;
                 res.send({
                     message: "Failed to Authenticate Token"
@@ -60,12 +60,13 @@ router.post('', validateNewTicket, verifyUser, (req, res) => {
     if(body.valid){
         ticketDAO.submitNewTicket(uuid.v4(), body.username, body.description, body.type, body.amount, "Pending")
         .then((data) => {
+            logger.info(`${body.username} has submitted a new ticket for "${body.description}"`);
             res.send({
                 message: "Ticket submitted successfully"
             })
         })
         .catch((err) => {
-            console.error(err);
+            logger.error(`An error occurred when ${req.body.username} tried to submit a new ticket: \n${err}`);
             res.statusCode = 400;
             res.send({
                 message: "Failed to submit ticket"
@@ -81,21 +82,37 @@ router.post('', validateNewTicket, verifyUser, (req, res) => {
 
 //View tickets submitted by user
 router.get('', verifyUser, (req, res, next) => {
-    const author = req.body.username;   
+    const author = req.body.username;
+    const type = req.query.type;
     if(req.query.author === 'default'){
-        if(author){
+        if(author && !type){
             ticketDAO.retrieveSubmittedTickets(author)
             .then((data) => {
+                logger.info(`${author} viewed all of their tickets`);
                 res.send(data.Items)
             })
             .catch((err) => {
-                console.error(err);
+                logger.error(`An error occurred when ${author} tried to view all their tickets: \n${err}`);
                 res.statusCode = 400;
                 res.send({
                     message: `Failed to retrieve tickets from user ${author}`
                 })
             })
         } 
+        if(author && type){
+            ticketDAO.retrieveSubmittedTicketsByType(author, type)
+            .then((data) => {
+                logger.info(`${author} viewed all of their tickets for ${type}`);
+                res.send(data.Items)
+            })
+            .catch((err) => {
+                logger.error(`An error occurred when ${req.body.username} tried to view all their ${type} tickets: \n${err}`);
+                res.statusCode = 400;
+                res.send({
+                    message: `Failed to retrieve tickets from user ${author}, of type ${type}`
+                })
+            })
+        }
     }  else {
         next();
     } 
@@ -109,10 +126,11 @@ router.get('', verifyUser, (req, res, next) => {
         if(status){
             ticketDAO.retrieveTicketsOfStatus(status)
             .then((data) => {
+                logger.info(`${req.body.username} viewed all ${status} tickets`);
                 res.send(data.Items)
             })
             .catch((err) => {
-                console.error(err);
+                logger.error(`An error occurred when ${req.body.username} tried to view all ${status} tickets: \n${err}`);
                 res.statusCode = 400;
                 res.send({
                     message: `Failed to retrieve tickets with status: ${status}`
@@ -122,6 +140,7 @@ router.get('', verifyUser, (req, res, next) => {
             next();
         }
     } else {
+        logger.info(`UNAUTHORIZED: ${req.body.role}: ${req.body.username} attempted to view all tickets`);
         res.statusCode = 401;
         res.send({
             message: `You must be an admin to view all ${status} tickets. You are an ${req.body.role}`
@@ -131,20 +150,22 @@ router.get('', verifyUser, (req, res, next) => {
 
 router.put('/:ticket_id', verifyUser, (req, res) => {
     if(req.body.role === 'admin'){
-        ticketDAO.updateTicketStatus(req.params.ticket_id, req.body.status)
+        ticketDAO.updateTicketStatus(req.params.ticket_id, req.body.status, req.body.username)
         .then((data) => {
+            logger.info(`${req.body.username} has ${req.body.status} ticket id: ${req.params.ticket_id}`);
             res.send({
                 message: "Ticket status updated successfully"
             })
         })
         .catch((err) => {
-            console.error(err);
+            logger.error(`An error occurred when ${req.body.username} tried to set the status of ticket id: ${req.params.ticket_id} to ${req.body.status} \n${err}`);
             res.statusCode = 400;
             res.send({
-                message: "Failed to update ticket"
+                message: "Failed to update ticket. Please ensure the ticket id is valid and the ticket is pending"
             })
         })
     }else{
+        logger.info(`UNAUTHORIZED: ${req.body.role}: ${req.body.username} attempted to change a ticket's status`);
         res.statusCode = 401;
         res.send({
             message: `You must be an admin to update a ticket. You are an ${req.body.role}`
