@@ -1,3 +1,7 @@
+module.exports = {
+    createLog
+}
+
 const { createLogger, transports, format} = require('winston');
 
 const logger = createLogger({
@@ -14,4 +18,9 @@ const logger = createLogger({
     ]
 });
 
-module.exports = logger;
+function createLog(req, res, next){
+    res.on("finish", function() {
+      logger.info(`${req.method}, ${`${req.protocol}://${req.get('host')}${req.originalUrl}`}, ${res.statusCode}, ${res.statusMessage}`);
+    });
+    next();
+};
