@@ -1,3 +1,267 @@
 2023-09-27T21:53:26.383Z [info]: POST, http://localhost:3000/tickets, 200, OK
 2023-09-27T21:53:40.782Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
 2023-09-27T21:55:15.867Z [info]: POST, http://localhost:3000/users/register, 200, OK
+2023-09-28T18:15:19.851Z [info]: POST, http://localhost:3000/users/register, 200, OK
+2023-09-28T18:15:20.124Z [info]: POST, http://localhost:3000/users/register, 200, OK
+2023-09-28T18:15:20.138Z [info]: POST, http://localhost:3000/users/login, 400, Bad Request
+2023-09-28T18:15:20.277Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T18:15:20.429Z [info]: POST, http://localhost:3000/users/login, 400, Bad Request
+2023-09-28T18:15:35.918Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T18:15:40.956Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T18:20:26.514Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T18:20:35.100Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T18:20:55.872Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T18:24:33.677Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T18:25:06.947Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T18:25:13.698Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T18:25:28.092Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T18:26:24.719Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T18:38:41.623Z [info]: POST, http://localhost:3000/users/register, 400, Bad Request
+2023-09-28T18:38:41.755Z [info]: POST, http://localhost:3000/users/register, 400, Bad Request
+2023-09-28T18:38:41.769Z [info]: POST, http://localhost:3000/users/login, 400, Bad Request
+2023-09-28T18:38:41.917Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T18:38:42.077Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T19:33:16.915Z [info]: POST, http://localhost:3000/users/register, 201, Created
+2023-09-28T19:34:22.676Z [info]: POST, http://localhost:3000/users/register, 400, Bad Request
+2023-09-28T19:35:32.584Z [info]: POST, http://localhost:3000/users/register, 400, Bad Request
+2023-09-28T19:36:08.334Z [info]: POST, http://localhost:3000/users/register, 201, Created
+2023-09-28T19:36:12.428Z [info]: POST, http://localhost:3000/users/register, 400, Bad Request
+2023-09-28T19:38:03.587Z [info]: POST, http://localhost:3000/users/register, 201, Created
+2023-09-28T19:38:18.388Z [info]: POST, http://localhost:3000/users/register, 201, Created
+2023-09-28T19:38:33.793Z [info]: POST, http://localhost:3000/users/register, 201, Created
+2023-09-28T19:39:42.557Z [info]: POST, http://localhost:3000/users/register, 201, Created
+2023-09-28T19:39:56.113Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T19:43:12.669Z [info]: POST, http://localhost:3000/users/register, 201, Created
+2023-09-28T19:43:37.514Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T19:45:52.768Z [info]: POST, http://localhost:3000/users/register, 201, Created
+2023-09-28T19:46:30.554Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T19:46:47.370Z [info]: POST, http://localhost:3000/users/login, 400, Bad Request
+2023-09-28T19:50:08.269Z [info]: POST, http://localhost:3000/users/register, 201, Created
+2023-09-28T19:50:29.118Z [info]: POST, http://localhost:3000/users/login, 400, Bad Request
+2023-09-28T19:51:42.767Z [info]: POST, http://localhost:3000/users/login, 400, Bad Request
+2023-09-28T19:51:48.388Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T19:52:12.351Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T19:53:09.141Z [info]: GET, http://localhost:3000/users/accounts, 401, Unauthorized
+2023-09-28T19:54:15.727Z [info]: POST, http://localhost:3000/users/register, 201, Created
+2023-09-28T19:54:20.762Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T19:54:36.181Z [info]: POST, http://localhost:3000/users/register, 201, Created
+2023-09-28T19:55:31.218Z [info]: POST, http://localhost:3000/users/register, 201, Created
+2023-09-28T19:55:33.647Z [info]: POST, http://localhost:3000/users/register, 201, Created
+2023-09-28T19:55:36.990Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T19:57:33.575Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T19:59:04.602Z [info]: POST, http://localhost:3000/users/register, 201, Created
+2023-09-28T19:59:04.871Z [info]: POST, http://localhost:3000/users/register, 201, Created
+2023-09-28T19:59:04.886Z [info]: POST, http://localhost:3000/users/login, 400, Bad Request
+2023-09-28T19:59:05.033Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T19:59:05.185Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T20:01:00.706Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T20:01:03.313Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T20:01:06.762Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T20:04:48.314Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T20:05:08.152Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T20:07:10.920Z [info]: POST, http://localhost:3000/users/login, 200, OK
+2023-09-28T20:07:13.036Z [info]: GET, http://localhost:3000/tickets?status=Pending, 200, OK
+2023-09-28T20:10:56.028Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T20:14:15.265Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T20:14:38.267Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T20:15:03.578Z [info]: POST, http://localhost:3000/users/register, 201, Created
+2023-09-28T20:15:09.543Z [info]: POST, http://localhost:3000/users/register, 400, Bad Request
+2023-09-28T20:15:13.010Z [info]: POST, http://localhost:3000/users/login, 400, Bad Request
+2023-09-28T20:23:28.285Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-28T20:23:32.526Z [info]: GET, http://localhost:3000/tickets?status=Pending, 401, Unauthorized
+2023-09-28T20:25:15.973Z [info]: GET, http://localhost:3000/tickets?status=Pending, 403, Forbidden
+2023-09-28T20:27:03.966Z [info]: GET, http://localhost:3000/tickets, 200, OK
+2023-09-28T20:27:07.581Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T20:27:10.397Z [info]: GET, http://localhost:3000/tickets, 200, OK
+2023-09-28T20:27:28.579Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-28T20:27:39.046Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-28T20:28:08.163Z [info]: GET, http://localhost:3000/tickets, 200, OK
+2023-09-28T20:28:13.546Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T20:28:16.390Z [info]: GET, http://localhost:3000/tickets, 200, OK
+2023-09-28T20:28:46.502Z [info]: GET, http://localhost:3000/tickets?status=Pending, 200, OK
+2023-09-28T20:30:57.094Z [info]: PUT, http://localhost:3000/tickets/f701aca1-3553-49a8-b3e1-0d55b5285133, 400, Bad Request
+2023-09-28T20:33:31.961Z [info]: PUT, http://localhost:3000/tickets/f701aca1-3553-49a8-b3e1-0d55b5285133, 400, Bad Request
+2023-09-28T20:33:58.976Z [info]: PUT, http://localhost:3000/tickets/630ba427-d303-46d4-bb8a-6aa1ba8a4e2f, 200, OK
+2023-09-28T20:43:19.520Z [info]: PUT, http://localhost:3000/tickets/630ba427-d303-46d4-bb8a-6aa1ba8a4e2f, 400, Bad Request
+2023-09-28T20:43:33.056Z [info]: GET, http://localhost:3000/tickets?status=Pending, 200, OK
+2023-09-28T20:43:43.075Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-28T20:43:45.890Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T20:43:46.595Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T20:43:47.276Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T20:43:49.852Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-28T20:43:53.323Z [info]: GET, http://localhost:3000/tickets?status=Pending, 200, OK
+2023-09-28T20:44:17.930Z [info]: PUT, http://localhost:3000/tickets/172294a8-19d4-4ed9-888e-2e09572fc80b, 400, Bad Request
+2023-09-28T20:45:08.115Z [info]: PUT, http://localhost:3000/tickets/172294a8-19d4-4ed9-888e-2e09572fc80b, 400, Bad Request
+2023-09-28T20:45:24.539Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-28T20:45:26.804Z [info]: GET, http://localhost:3000/tickets?status=Pending, 200, OK
+2023-09-28T20:45:36.465Z [info]: PUT, http://localhost:3000/tickets/41f3c329-df8d-49dc-86a6-9204c7e8228a, 200, OK
+2023-09-28T20:46:24.824Z [info]: PUT, http://localhost:3000/tickets/690a2dae-f318-4a2e-9e26-442458304843, 200, OK
+2023-09-28T20:46:54.337Z [info]: GET, http://localhost:3000/tickets?status=Pending, 200, OK
+2023-09-28T20:47:00.274Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-28T20:47:06.926Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T20:47:07.650Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T20:47:10.459Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-28T20:47:12.710Z [info]: GET, http://localhost:3000/tickets?status=Pending, 200, OK
+2023-09-28T20:47:23.287Z [info]: PUT, http://localhost:3000/tickets/f701aca1-3553-49a8-b3e1-0d55b5285133, 400, Bad Request
+2023-09-28T20:47:53.259Z [info]: PUT, http://localhost:3000/tickets/9cf4a132-ebb2-4cf6-89f6-5766f108964f, 200, OK
+2023-09-28T20:48:22.313Z [info]: PUT, http://localhost:3000/tickets/0bfd93e5-7728-40dc-a339-9a34f54daf60, 200, OK
+2023-09-28T20:50:28.779Z [info]: GET, http://localhost:3000/tickets?status=Pending, 200, OK
+2023-09-28T20:50:35.973Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-28T20:50:43.587Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T20:50:44.305Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T20:50:45.050Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T20:50:48.993Z [info]: GET, http://localhost:3000/tickets?status=Pending, 403, Forbidden
+2023-09-28T20:50:53.079Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-28T20:50:54.656Z [info]: GET, http://localhost:3000/tickets?status=Pending, 200, OK
+2023-09-28T20:51:03.613Z [info]: GET, http://localhost:3000/tickets, 200, OK
+2023-09-28T20:51:47.306Z [info]: GET, http://localhost:3000/tickets?type=Travel, 200, OK
+2023-09-28T20:51:50.980Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-28T20:51:53.750Z [info]: GET, http://localhost:3000/tickets, 200, OK
+2023-09-28T20:52:05.283Z [info]: GET, http://localhost:3000/tickets?type=Travel, 200, OK
+2023-09-28T20:54:47.787Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-28T20:54:49.716Z [info]: GET, http://localhost:3000/users/accounts, 200, OK
+2023-09-28T20:59:52.529Z [info]: GET, http://localhost:3000/users/accounts, 200, OK
+2023-09-28T21:00:04.641Z [info]: GET, http://localhost:3000/users/accounts?username=Toney, 200, OK
+2023-09-28T21:00:25.002Z [info]: GET, http://localhost:3000/users/accounts?username=Toney, 200, OK
+2023-09-28T21:00:32.597Z [info]: GET, http://localhost:3000/users/accounts?username=lenney, 200, OK
+2023-09-28T21:01:01.045Z [info]: GET, http://localhost:3000/users/accounts?username=lenney, 200, OK
+2023-09-28T21:02:35.107Z [info]: GET, http://localhost:3000/users/accounts?username=lenney, 400, Bad Request
+2023-09-28T21:02:41.909Z [info]: GET, http://localhost:3000/users/accounts?username=Toney, 200, OK
+2023-09-28T21:02:46.142Z [info]: GET, http://localhost:3000/users/accounts, 200, OK
+2023-09-28T21:02:58.975Z [info]: GET, http://localhost:3000/users/accounts?username=Toney, 200, OK
+2023-09-28T21:03:33.769Z [info]: PUT, http://localhost:3000/users/accounts/9ee2b907-3589-40d4-a153-fb6b4a05102b, 400, Bad Request
+2023-09-28T21:05:38.771Z [info]: PUT, http://localhost:3000/users/accounts/d407b1f1-4bf0-4871-afcb-9bce4d52c7, 400, Bad Request
+2023-09-28T21:11:32.125Z [info]: GET, http://localhost:3000/users/accounts?username=Toney, 200, OK
+2023-09-28T21:12:20.942Z [info]: GET, http://localhost:3000/users/accounts?username=Toney, 200, OK
+2023-09-28T21:12:24.384Z [info]: GET, http://localhost:3000/users/accounts, 200, OK
+2023-09-28T21:12:53.012Z [info]: PUT, http://localhost:3000/users/accounts/d3c6576b-61aa-4084-a626-64d01bfe7801, 200, OK
+2023-09-28T21:13:24.220Z [info]: GET, http://localhost:3000/users/accounts, 200, OK
+2023-09-28T21:13:29.185Z [info]: PUT, http://localhost:3000/users/accounts/d3c6576b-61aa-4084-a626-64d01bfe7801, 200, OK
+2023-09-28T21:13:49.846Z [info]: GET, http://localhost:3000/users/accounts, 200, OK
+2023-09-28T21:14:07.334Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-28T21:14:10.155Z [info]: GET, http://localhost:3000/users/accounts?username=Toney, 403, Forbidden
+2023-09-28T21:14:15.034Z [info]: PUT, http://localhost:3000/users/accounts/d3c6576b-61aa-4084-a626-64d01bfe7801, 403, Forbidden
+2023-09-28T21:14:17.663Z [info]: PUT, http://localhost:3000/users/accounts/d3c6576b-61aa-4084-a626-64d01bfe7801, 403, Forbidden
+2023-09-28T21:24:04.489Z [info]: PUT, http://localhost:3000/users/accounts/d3c6576b-61aa-4084-a626-64d01bfe7801, 403, Forbidden
+2023-09-28T21:24:08.121Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-28T21:24:10.748Z [info]: PUT, http://localhost:3000/users/accounts/d3c6576b-61aa-4084-a626-64d01bfe7801, 400, Bad Request
+2023-09-28T21:24:45.434Z [info]: PUT, http://localhost:3000/users/accounts/d3c6576b-61aa-4084-a626-64d01bfe7801, 400, Bad Request
+2023-09-28T21:25:01.938Z [info]: PUT, http://localhost:3000/users/accounts/d3c6576b-61aa-4084-a626-64d01bfe7801, 400, Bad Request
+2023-09-28T21:28:08.747Z [info]: PUT, http://localhost:3000/users/accounts/d3c6576b-61aa-4084-a626-64d01bfe7801, 200, OK
+2023-09-28T21:29:09.203Z [info]: PUT, http://localhost:3000/users/accounts/d3c6576b-61aa-4084-a626-64d01bfe7801, 400, Bad Request
+2023-09-28T21:29:14.187Z [info]: PUT, http://localhost:3000/users/accounts/d3c6576b-61aa-4084-a626-64d01bfe7801, 200, OK
+2023-09-28T21:29:17.930Z [info]: PUT, http://localhost:3000/users/accounts/d3c6576b-61aa-4084-a626-64d01bfe7801, 400, Bad Request
+2023-09-28T21:29:23.404Z [info]: PUT, http://localhost:3000/users/accounts/d3c6576b-61aa-4084-a626-64d01bfe7801, 200, OK
+2023-09-28T21:37:56.795Z [info]: GET, http://localhost:3000/users/accounts, 200, OK
+2023-09-28T21:41:45.748Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T21:43:27.125Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T21:48:28.949Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T21:50:13.988Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T21:50:41.978Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T21:50:45.400Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T21:51:02.541Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T21:51:09.921Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T21:51:23.494Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T21:59:24.359Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T21:59:27.273Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T21:59:30.930Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T22:02:30.959Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T22:02:35.026Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T22:02:48.915Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T22:03:13.453Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T22:03:16.180Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T22:03:19.608Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T22:03:26.317Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T22:03:31.818Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T22:04:12.705Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T22:05:34.269Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T22:05:39.447Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T22:05:42.927Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T22:05:47.700Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T22:07:39.787Z [info]: POST, http://localhost:3000/users/register, 201, Created
+2023-09-28T22:07:43.264Z [info]: POST, http://localhost:3000/users/register, 400, Bad Request
+2023-09-28T22:07:47.137Z [info]: POST, http://localhost:3000/users/login, 400, Bad Request
+2023-09-28T22:08:02.375Z [info]: POST, http://localhost:3000/users/login, 400, Bad Request
+2023-09-28T22:08:29.705Z [info]: POST, http://localhost:3000/users/register, 400, Bad Request
+2023-09-28T22:08:37.863Z [info]: POST, http://localhost:3000/users/register, 400, Bad Request
+2023-09-28T22:09:08.083Z [info]: POST, http://localhost:3000/users/register, 400, Bad Request
+2023-09-28T22:09:31.429Z [info]: POST, http://localhost:3000/users/register, 400, Bad Request
+2023-09-28T22:09:36.126Z [info]: POST, http://localhost:3000/users/register, 400, Bad Request
+2023-09-28T22:09:39.459Z [info]: POST, http://localhost:3000/users/register, 400, Bad Request
+2023-09-28T22:09:42.961Z [info]: POST, http://localhost:3000/users/register, 201, Created
+2023-09-28T22:09:57.642Z [info]: POST, http://localhost:3000/users/login, 400, Bad Request
+2023-09-28T22:10:03.106Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-28T22:10:07.067Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-28T22:10:13.645Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T22:10:16.034Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T22:10:18.871Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T22:10:22.046Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T22:10:25.667Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-28T22:10:29.525Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-28T22:10:37.692Z [info]: PUT, http://localhost:3000/tickets/1963576a-abbc-41cb-b846-165d4e00ca, 400, Bad Request
+2023-09-28T22:10:43.788Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-28T22:10:47.020Z [info]: PUT, http://localhost:3000/tickets/1963576a-abbc-41cb-b846-165d4e00ca, 400, Bad Request
+2023-09-28T22:11:22.057Z [info]: PUT, http://localhost:3000/tickets/1963576a-abbc-41cb-b846-165d4e00ca, 403, Forbidden
+2023-09-28T22:11:46.283Z [info]: PUT, http://localhost:3000/tickets/0bfd93e5-7728-40dc-a339-9a34f54daf60, 403, Forbidden
+2023-09-28T22:11:50.842Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-28T22:11:56.117Z [info]: PUT, http://localhost:3000/tickets/0bfd93e5-7728-40dc-a339-9a34f54daf60, 400, Bad Request
+2023-09-28T22:12:50.432Z [info]: PUT, http://localhost:3000/tickets/656db69d-29aa-47b1-ae8a-50060a0b5661, 400, Bad Request
+2023-09-28T22:14:10.306Z [info]: GET, http://localhost:3000/tickets, 200, OK
+2023-09-28T22:14:21.311Z [info]: GET, http://localhost:3000/tickets?status=Pending, 200, OK
+2023-09-28T22:14:33.299Z [info]: GET, http://localhost:3000/tickets?type=Travel, 200, OK
+2023-09-28T22:14:43.505Z [info]: GET, http://localhost:3000/users/accounts, 200, OK
+2023-09-28T22:14:55.339Z [info]: GET, http://localhost:3000/users/accounts?username=Barbara, 200, OK
+2023-09-28T22:15:07.156Z [info]: PUT, http://localhost:3000/users/accounts/d3c6576b-61aa-4084-a626-64d01bfe7801, 400, Bad Request
+2023-09-28T22:15:23.202Z [info]: PUT, http://localhost:3000/users/accounts/aa31f641-b025-409a-b159-b98eeb387070, 200, OK
+2023-09-28T22:15:28.156Z [info]: GET, http://localhost:3000/users/accounts, 200, OK
+2023-09-28T22:15:41.626Z [info]: PUT, http://localhost:3000/users/accounts/aa31f641-b025-409a-b159-b98eeb387070, 200, OK
+2023-09-28T22:15:45.993Z [info]: GET, http://localhost:3000/users/accounts, 200, OK
+2023-09-29T11:47:58.636Z [info]: POST, http://localhost:3000/users/register, 400, Bad Request
+2023-09-29T11:48:13.395Z [info]: POST, http://localhost:3000/users/register, 400, Bad Request
+2023-09-29T11:48:22.098Z [info]: POST, http://localhost:3000/users/register, 400, Bad Request
+2023-09-29T11:48:40.279Z [info]: POST, http://localhost:3000/users/register, 201, Created
+2023-09-29T11:48:57.583Z [info]: POST, http://localhost:3000/users/login, 400, Bad Request
+2023-09-29T11:49:20.565Z [info]: POST, http://localhost:3000/users/login, 400, Bad Request
+2023-09-29T11:49:24.289Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-29T11:49:57.082Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-29T11:50:03.389Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-29T11:50:17.034Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-29T11:50:22.148Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-29T11:50:25.400Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-29T11:50:35.597Z [info]: POST, http://localhost:3000/tickets, 400, Bad Request
+2023-09-29T11:51:04.427Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-29T11:51:58.191Z [info]: POST, http://localhost:3000/tickets, 401, Unauthorized
+2023-09-29T11:52:40.212Z [info]: POST, http://localhost:3000/tickets, 401, Unauthorized
+2023-09-29T11:53:39.226Z [info]: GET, http://localhost:3000/tickets?status=Pending, 403, Forbidden
+2023-09-29T11:53:50.215Z [info]: PUT, http://localhost:3000/tickets/0bfd93e5-7728-40dc-a339-9a34f54daf60, 403, Forbidden
+2023-09-29T11:53:55.639Z [info]: PUT, http://localhost:3000/tickets/656db69d-29aa-47b1-ae8a-50060a0b5661, 403, Forbidden
+2023-09-29T11:54:08.003Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-29T11:54:12.333Z [info]: GET, http://localhost:3000/tickets?status=Pending, 200, OK
+2023-09-29T11:54:23.886Z [info]: POST, http://localhost:3000/users/register, 201, Created
+2023-09-29T11:54:26.423Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-29T11:54:29.442Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-29T11:54:39.289Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-29T11:54:49.342Z [info]: GET, http://localhost:3000/tickets?status=Pending, 200, OK
+2023-09-29T11:55:06.628Z [info]: PUT, http://localhost:3000/tickets/fe9b42d2-0fe9-4ca5-a2f1-50e3ef62434d, 200, OK
+2023-09-29T11:55:15.248Z [info]: GET, http://localhost:3000/tickets?status=Pending, 200, OK
+2023-09-29T11:55:29.388Z [info]: PUT, http://localhost:3000/tickets/fe9b42d2-0fe9-4ca5-a2f1-50e3ef62434d, 400, Bad Request
+2023-09-29T11:56:12.356Z [info]: PUT, http://localhost:3000/tickets/fe9b42d2-0fe9-4ca5-a2f1-50e3ef62434d, 400, Bad Request
+2023-09-29T11:56:55.386Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-29T11:56:59.671Z [info]: POST, http://localhost:3000/tickets, 201, Created
+2023-09-29T11:57:03.065Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-29T11:57:05.899Z [info]: GET, http://localhost:3000/tickets?status=Pending, 200, OK
+2023-09-29T11:57:36.442Z [info]: PUT, http://localhost:3000/tickets/563c16bd-b97b-426d-8a9a-bd3371e656fb, 400, Bad Request
+2023-09-29T11:57:46.148Z [info]: PUT, http://localhost:3000/tickets/563c16bd-b97b-426d-8a9a-bd3371e656fb, 200, OK
+2023-09-29T11:57:58.467Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-29T11:58:08.484Z [info]: GET, http://localhost:3000/tickets, 200, OK
+2023-09-29T11:58:40.602Z [info]: GET, http://localhost:3000/tickets?type=Lodging, 200, OK
+2023-09-29T11:58:52.118Z [info]: GET, http://localhost:3000/users/accounts, 403, Forbidden
+2023-09-29T11:58:56.005Z [info]: POST, http://localhost:3000/users/login, 202, Accepted
+2023-09-29T11:58:58.767Z [info]: GET, http://localhost:3000/users/accounts, 200, OK
+2023-09-29T11:59:11.102Z [info]: GET, http://localhost:3000/users/accounts?username=Keon, 200, OK
+2023-09-29T11:59:25.856Z [info]: PUT, http://localhost:3000/users/accounts/e2de52ed-1ad8-4279-a421-43739427e4b2, 200, OK
+2023-09-29T11:59:31.044Z [info]: GET, http://localhost:3000/users/accounts?username=Keon, 200, OK
+2023-09-29T11:59:44.542Z [info]: PUT, http://localhost:3000/users/accounts/e2de52ed-1ad8-4279-a421-43739427e4b2, 200, OK
+2023-09-29T11:59:51.127Z [info]: GET, http://localhost:3000/users/accounts?username=Keon, 200, OK
+2023-09-29T11:59:58.029Z [info]: PUT, http://localhost:3000/users/accounts/e2de52ed-1ad8-4279-a421-43739427e4b2, 400, Bad Request
+2023-09-29T12:00:06.315Z [info]: PUT, http://localhost:3000/users/accounts/e2de52ed-1ad8-4279-a421-43739427e4b2, 200, OK

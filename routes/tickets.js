@@ -16,16 +16,16 @@ router.post('', logger.createLog, ticketValidation.newTicket, userValidation.ver
     try{
         const data = await ticketService.submitNewTicket(body.currentUser, body.description, body.type, body.amount)
         if(data.bool){
-            res.status(200).send({
+            res.status(201).send({
                 message: data.message
             })
         }else{
             res.status(400).send({
-                message: data.message,
+                message: data.message
             })
         }
     }catch(err){
-        res.status(400).send({
+        res.status(500).send({
             message: 'An error occurred',
             error: `${err}`
         })
@@ -40,33 +40,34 @@ router.get('', logger.createLog, userValidation.verifyUser, async (req, res) => 
         if(data.bool){
             res.send(data.tickets.Items)
         }else{
-            res.status(401).send({
+            res.status(403).send({
                 message: data.message
             })
         }
-    } catch(err) {
-        res.status(400).send({
+    }catch(err){
+        res.status(500).send({
             message: 'An error occurred',
             error: `${err}`
         })
     }
 })
 
-router.put('/:ticket_id', logger.createLog, ticketValidation.updateTicketStatus, userValidation.verifyUser, userValidation.isAdmin, async (req, res) => {       
+router.put('/:ticket_id', logger.createLog, userValidation.isAdmin, ticketValidation.updateTicketStatus, userValidation.verifyUser,  async (req, res) => {       
     try{
         const data = await ticketService.updateTicketStatus(req.params.ticket_id, req.body.status, req.body.currentUser)
         if(data.bool){
             res.send({
-                message: data.message
+                message: data.message,
+                ticket: data.ticket
             })
         }else{
             res.status(400).send({
-                message: `Only valid ticket ids with the status 'Pending' can be updated.`,
-                error: `${data.message}`
+                message: `The ticket could not be updated. Please ensure the ticket id is valid, the current ticket status is pending, and you are not the author of the ticket`,
+                // error: `${data.message}`
             })
         }
-    } catch(err) {
-        res.status(400).send({
+    }catch(err){
+        res.status(500).send({
             message: 'An error occurred',
             error: `${err}`
         })

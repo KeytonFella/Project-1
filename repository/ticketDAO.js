@@ -13,7 +13,8 @@ module.exports = {
     retrieveSubmittedTickets,
     retrieveTicketsOfStatus,
     updateTicketStatus,
-    retrieveSubmittedTicketsByType
+    retrieveSubmittedTicketsByType,
+    retrieveTicketByID
 }
 //Submit a ticket
 /** A ticket should be a JSON that includes ticket id, author, description, type, and amount
@@ -37,6 +38,15 @@ function submitNewTicket(ticket_id, author, description, type, amount, status){
     return docClient.put(params).promise();
 }
 
+function retrieveTicketByID(ticket_id){
+    const params = {
+        TableName: 'tickets',
+        Key: {
+            ticket_id: ticket_id,
+        }
+    };
+    return docClient.get(params).promise();
+}
 
 //User views their own previous tickets
 /**A user should be able to see their request submission history including tickets that 
@@ -73,15 +83,17 @@ function retrieveSubmittedTicketsByType(author, type){
 }
 
 //Manager views all pending tickets
-function retrieveTicketsOfStatus(status){
+function retrieveTicketsOfStatus(status, user){
     const params = {
         TableName: 'tickets',
-        FilterExpression: '#s = :status',
+        FilterExpression: '#s = :status AND #a <> :author',
         ExpressionAttributeNames: {
-            '#s': 'status'
+            '#s': 'status',
+            '#a': 'author'
         },
         ExpressionAttributeValues: {
-            ':status': status
+            ':status': status,
+            ':author': user
         },  
     };
     return docClient.scan(params).promise();
@@ -95,8 +107,9 @@ function updateTicketStatus(ticket_id, status, resolver){
             ticket_id
         },
         UpdateExpression: 'set #s = :status, #r = :resolver',
-        ConditionExpression: 'attribute_exists(ticket_id) AND #s = :pending',
+        ConditionExpression: 'attribute_exists(ticket_id) AND #s = :pending AND #a <> :resolver',
         ExpressionAttributeNames:{
+            '#a': 'author',
             '#s': 'status',
             '#r': 'resolver'
         },

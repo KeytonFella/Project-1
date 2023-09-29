@@ -21,6 +21,7 @@ function retrieveUsername(username){
     const params = {
         TableName: 'users',
         FilterExpression: '#u = :username',
+        ProjectionExpression: 'user_id, username, user_role',
         ExpressionAttributeNames: {
             '#u': 'username'
         },
@@ -94,6 +95,5 @@ function updateUserRole(user_id, user_role){
             ':user_role': user_role
         }   
     }
-
     return docClient.update(params).promise();
 }

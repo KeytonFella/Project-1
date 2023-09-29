@@ -42,10 +42,19 @@ async function login(username, password){
     }
 }
 
-async function retrieveEmployeeList(){
+async function retrieveEmployeeList(query){
     try{
-        const data = await userDAO.retrieveEmployeeList();
-        return {bool: true, employeeList: data};
+        if(query.username){
+            const data = await userDAO.retrieveUsername(query.username);
+            if(data.Count === 1){
+                return {bool: true, employeeList: data};
+            }else{
+                return {bool: false, message: `There is no employee with the username ${query.username}`}
+            }            
+        }else{
+            const data = await userDAO.retrieveEmployeeList();
+            return {bool: true, employeeList: data};
+        }
     }catch(err){
         return {bool: false, message: `An Error Occurred: \n ${err}`};
     }

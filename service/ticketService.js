@@ -20,7 +20,6 @@ async function submitNewTicket(author, description, type, amount){
 async function getTickets(currentUser, queryObject){
     const user = currentUser.username;
     const role = currentUser.role;
-
     try{
         if(queryObject.type){
             const data = await ticketDAO.retrieveSubmittedTicketsByType(user, queryObject.type)
@@ -28,25 +27,26 @@ async function getTickets(currentUser, queryObject){
         }
         else if(queryObject.status){
             if(role === 'admin' && queryObject.status === "Pending"){
-                const data = await ticketDAO.retrieveTicketsOfStatus(queryObject.status)
+                const data = await ticketDAO.retrieveTicketsOfStatus(queryObject.status, user)
                 return {bool: true, tickets: data};
             } else {
                 return {bool: false, message: "You do not have the required permissions to make this request"};
             }
-        } else {
+        }else{
             const data = await ticketDAO.retrieveSubmittedTickets(user)
             return {bool: true, tickets: data};
         }
-    } catch(err) {
+    }catch(err){
         return {bool: false, message: `${err}`};
     }
 }
 
 async function updateTicketStatus(ticket_id, status, resolver){
     try{
-        const data = await ticketDAO.updateTicketStatus(ticket_id, status, resolver)
-        return {bool: true, message: "Ticket updated successfully"}
-    } catch(err) {
+        const update = await ticketDAO.updateTicketStatus(ticket_id, status, resolver);
+        const data = await ticketDAO.retrieveTicketByID(ticket_id);
+        return {bool: true, message: "Ticket updated successfully", ticket: data.Item}
+    }catch(err){
         return {bool: false, message: `${err}`};
     }
 }

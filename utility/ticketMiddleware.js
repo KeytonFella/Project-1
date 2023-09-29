@@ -21,8 +21,13 @@ function newTicket(req, res, next){
         res.status(400).send({
             message: `${message}`
         })
-    } else {
+    }else if(body.type === "Travel" || body.type === "Food" || body.type === "Lodging" || body.type === "Other"){
         next();
+    }else{
+        message = message.concat("The type must be 'Travel', 'Food', 'Lodging', or 'Other'");
+        res.status(400).send({
+            message: `${message}`
+        })
     }
 }
 

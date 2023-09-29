@@ -3,7 +3,8 @@ const jwtUtil = require('../utility/jwt_util');
 module.exports = {
     userProperties,
     verifyUser,
-    isAdmin
+    isAdmin,
+    containsUserRole
 }
 
 function userProperties(req, res, next){
@@ -20,11 +21,27 @@ function userProperties(req, res, next){
         res.send({
             message: `${message}`
         })
-    } else {
+    }else{
         next();
     }
 }
 
+function containsUserRole(req, res, next){
+    const user_role = req.body.user_role;
+    if(user_role){
+        if(user_role === "admin" || user_role === "employee"){
+            next();
+        }else{
+            res.status(400).send({
+                message: "The user role must be either 'admin' or 'employee'"
+            })
+        }        
+    }else{
+        res.status(400).send({
+            message: "Please include a user role in your request"
+        })
+    }
+}
 
 function verifyUser(req, res, next){
     if(req.headers.authorization){
@@ -42,10 +59,10 @@ function verifyUser(req, res, next){
                     message: "Failed to Authenticate Token"
                 })
             })
-    } else {
+    }else{
         res.statusCode = 401;
         res.send({
-            message: "User requires authorization"
+            message: "User requires authorization. Please log in"
         })
     }
 }
@@ -57,22 +74,20 @@ function isAdmin(req, res, next){
             .then((payload) => {
                 if(payload.role === 'admin'){
                     next();
-                } else {
-                    res.status(401).send({
+                }else{
+                    res.status(403).send({
                         message: "You do not have the required permissions to make this request"
                     })
                 }
             })
             .catch((err) => {
                 console.error(err);
-                res.statusCode = 401;
-                res.send({
+                res.status(401).send({
                     message: "Failed to Authenticate Token"
                 })
             })
-    } else {
-        res.statusCode = 401;
-        res.send({
+    }else{
+        res.status(401).send({
             message: "User requires authorization"
         })
     }

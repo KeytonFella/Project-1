@@ -14,7 +14,7 @@ router.post('/register', logger.createLog, userValidation.userProperties, async 
         try{
             const data = await userService.registerUser(body.username, body.password);
             if(data.bool){
-                res.status(200).send({
+                res.status(201).send({
                     message: data.message
                 })
             }else{
@@ -23,7 +23,7 @@ router.post('/register', logger.createLog, userValidation.userProperties, async 
                 })
             }
         }catch(err){
-            res.status(400).send({
+            res.status(500).send({
                 message: 'An error occurred',
                 error: `${err}`
             })
@@ -36,7 +36,7 @@ router.post('/login', logger.createLog, userValidation.userProperties, async (re
     try{
         const data = await userService.login(body.username, body.password);
         if(data.bool){
-            res.status(200).send({
+            res.status(202).send({
                 message: data.message,
                 token: data.token
             })
@@ -46,7 +46,7 @@ router.post('/login', logger.createLog, userValidation.userProperties, async (re
             })
         }
     }catch(err){
-        res.status(400).send({
+        res.status(500).send({
             message: 'An error occurred',
             error: `${err}`
         })
@@ -55,7 +55,7 @@ router.post('/login', logger.createLog, userValidation.userProperties, async (re
 
 router.get('/accounts', logger.createLog, userValidation.isAdmin, async (req, res) => { 
     try{
-        const data = await userService.retrieveEmployeeList();
+        const data = await userService.retrieveEmployeeList(req.query);
         if(data.bool){
             res.status(200).send(data.employeeList.Items);
         }else{
@@ -64,7 +64,7 @@ router.get('/accounts', logger.createLog, userValidation.isAdmin, async (req, re
             });
         }       
     }catch(err){
-        res.status(400).send({
+        res.status(500).send({
             message: 'An error occurred',
             error: `${err}`
         });
@@ -72,9 +72,8 @@ router.get('/accounts', logger.createLog, userValidation.isAdmin, async (req, re
 
 });
 
-router.put('/accounts/:user_id', logger.createLog, userValidation.isAdmin, async (req, res) => {
+router.put('/accounts/:user_id', logger.createLog, userValidation.isAdmin, userValidation.containsUserRole, async (req, res) => {
     const body = req.body;
-
     try{
         const data = await userService.updateUserRole(req.params.user_id, body.user_role);
         if(data.bool){
@@ -88,8 +87,7 @@ router.put('/accounts/:user_id', logger.createLog, userValidation.isAdmin, async
             })
         }
     }catch(err){
-        logger.error(`An error occurred when trying to update user_id: ${req.params.user_id} role to ${body.user_role}: \n${err}`);
-        res.status(400).send({
+        res.status(500).send({
             message: 'An error occurred',
             error: `${err}`
         });
